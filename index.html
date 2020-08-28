@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>ESU Charity Home</title>
+    <style>
+        input[type=button] {
+            width: 300px;
+            height: 100px;
+            background-color: firebrick;
+            color: white;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+            padding-top: 60px;
+        }
+        .modal-content {
+            background-color: firebrick;
+            color: white;
+            margin: 5% auto 15% auto;
+            border: 3px solid #000000;
+            width: 50%;
+        }
+        .container {
+            margin: 10px auto;
+            width: 600px;
+            height: auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <img src="logo.png" height="100" />
+    <br />
+    <input type="button" onclick="location.href='customer.html'" value="New Customer" />
+    <input type="button" onclick="location.href='customer.html'" value="Returning Customer" />
+    <input type="button" onclick="document.getElementById('modal-form').style.display='block'" value="Inventory" />
+    <div id="modal-form" class="modal">
+        <div id="adminForm" class="container">
+          <center>
+            <form method="post" class="modal-content" action="validate()">
+                Email* <input type="email" name="email" required />
+                <br />
+                <br />
+                Password* <input type="password" name="password" required />
+                <br />
+                <br />
+                <input type="submit" onclick="location.href='inventory.html'" value="Submit" /> *Required Field
+            </form>
+          </center>
+        </div>
+    </div>
+    <script>
+        var modal = document.getElementById('modal-form');
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

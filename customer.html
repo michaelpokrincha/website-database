@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Customer Form</title>
+    <style>
+        label, p {
+            margin-left: 15px;
+        }
+        .hidden {
+            width: auto;
+            height: auto;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <img src="logo.png" height="100" />
+    <br />
+    <form id="customerForm" action="addcustomer.php" method="post">
+        <label for="firstName">First Name*</label>
+        <input type="text" name="firstName" size="30" required />
+
+        <label for="lastName">Last Name*</label>
+        <input type="text" name="lastName" size="30" required />
+        <br />
+        <br />
+        <label for="creditCard">Credit Card*</label>
+        <input type="number" name="creditCard" size="16" required />
+
+        <label for="cvs">CVS*</label>
+        <input type="number" name="cvs" size="4" required />
+        <br />
+        <br />
+        <label for="email">Email*</label>
+        <input type="email" name="email" required />
+
+        <label for="password">Password*</label>
+        <input type="password" name="password" required />
+
+        <label for="phoneNumber">Phone Number (Optional)</label>
+        <input type="tel" name="phoneNumber" />
+        <br />
+        <br />
+
+        <input type="submit" name="submit" value="Submit" /> *Required Field
+    </form>
+    <br />
+    <br />
+
+    <form id="getInfo" action="getInfo.php" method="post">
+      <input type="submit" name="getInfo" value="Get Database Info" />
+    </form>
+
+    <form id="orderForm" action="" method="post">
+        <p>
+            Choose what you would like to order. A matching pair will be donated
+            to the charity of your choice. Please make checks payable to ESU and write
+            Sock Donation in the check memo (Socks available starting March 22nd):<br />
+        </p>
+
+        <h3>Socks</h3>
+        <input type="checkbox" name="esuMedium" />
+        <label for="esuMedium">ESU Colors - Medium - Men (6-8) Women (6-9) Donation $20 </label>
+        Qty <input type="number" min="0" max="5" name="esuMediumQty" />
+        Charity <input type="text" name="esuMediumCharity" />
+        <br /><br />
+        <input type="checkbox" name="esuLarge" />
+        <label for="esuLarge">ESU Colors - Large - Men (9-13) Donation $20 </label>
+        Qty <input type="number" min="0" max="5" name="esuLargeQty" />
+        Charity <input type="text" name="esuLargeCharity" />
+        <br /><br />
+        <input type="checkbox" name="neonMedium" />
+        <label for="neonMedium">Neon Colors - Medium - Men (6-8) Women (6-9) Donation $20 </label>
+        Qty <input type="number" min="0" max="5" name="neonMediumQty" />
+        Charity <input type="text" name="neonMediumCharity" />
+        <br /><br />
+        <input type="checkbox" name="neonLarge" />
+        <label for="neonLarge">Neon Colors - Large - Men (9-13) Donation $20 </label>
+        Qty <input type="number" min="0" max="5" name="neonLargeQty" />
+        Charity <input type="text" name="neonLargeCharity" />
+        <br /><br />
+
+        <h3>Hats</h3>
+        <input type="checkbox" name="esuHat" />
+        <label for="esuHat">ESU Colors - Donation $20 </label>
+        Qty <input type="number" min="0" max="5" name="esuHatQty" />
+        Charity <input type="text" name="esuHatCharity" />
+        <br /><br />
+        <input type="checkbox" name="neonHat" />
+        <label for="neonHat">Neon Colors - Donation $20 </label>
+        Qty <input type="number" min="0" max="5" name="neonHatQty" />
+        Charity <input type="text" name="neonHatCharity" />
+        <br /><br />
+
+        <h3>Pickup or Delivery</h3>
+        <input type="radio" name="serviceOption" />
+        <label for="serviceOption">I want to pickup my socks. Socks are available for pickup from the C.R.E.A.T.E. Lab (Stroud Hall, Room 107) Tuesdays and Wednesdays 1-4pm</label>
+        <br /><br />
+        <input type="radio" name="serviceOption" />
+        <label for="serviceOption">I want my socks delivered. Delivery available on campus only. Delivery day Tuesdays between 1-4pm</label>
+        <br /><br />
+        <h4>Deliver my socks to (Optional)</h4>
+        <label for="buildingName">Building Name </label>
+        <input type="text" name="buildingName" />
+        <br /><br />
+        <label for="roomNum">Room # </label>
+        <input type="text" name="roomNum" />
+        <br /><br />
+        <input type="submit" value="Submit" />
+    </form>
+</body>
+</html>
